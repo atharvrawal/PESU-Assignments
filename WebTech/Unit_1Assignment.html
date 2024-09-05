@@ -6,33 +6,28 @@
     <title>Olympics Games 2024 Paris Survey</title>
     <style>
         body {
-            background-color: #f4f4f4;
+            background-color: rgb(199, 232, 255);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            color: #1e90ff;
-        }
-
         table {
-            width: 80%;
-            margin: 20px auto;
+            width: 100%;
+            margin: 10px auto;
             border-collapse: collapse;
             background-color: #fff;
             border: 1px solid #ccc;
         }
 
         th, td {
-            padding: 15px;
+            padding: 10px;
             text-align: left;
             border: 1px solid #ccc;
         }
 
         th {
-            background-color: #1e90ff;
+            background-color: #2291ff;
             color: white;
         }
 
@@ -42,12 +37,13 @@
             font-weight: bold;
         }
 
-        input[type="text"], input[type="email"], input[type="tel"], select {
-            width: 100%;
-            padding: 8px;
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"] ,select {
+            width: 98%;
+            padding-top: 10px;
+            padding-bottom: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
         }
 
         input[type="radio"], input[type="checkbox"] {
@@ -55,7 +51,7 @@
         }
 
         .form-section {
-            width: 50%;
+            width: 20%;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -86,6 +82,15 @@
         .required {
             color: red;
         }
+
+        .submit{
+            width: 200px;
+        }
+
+        .reset{
+            width: 200px;
+        }
+
     </style>
     <script>
         function validateForm() {
@@ -132,55 +137,66 @@
     <table>
         <tr>
             <th colspan="2">Event</th>
-            <th>Venue</th>
+            <th colspan="1">Date</th>
+            <th colspan="1">Location</th>
         </tr>
         <tr>
-            <td rowspan="2">Opening Ceremony</td>
-            <td>Time: 7:00 PM</td>
-            <td>Paris Main Stadium</td>
+            <td rowspan="2" colspan="1">Opening Ceremony</td>
+            <td colspan="1">Main Stadium</td>
+            <td>26 July 2024</td>
+            <td>Paris, France</td>
         </tr>
         <tr>
-            <td>Date: 26 July 2024</td>
-            <td>Seating Capacity: 80,000</td>
+            <td>Beach Events</td>
+            <td>27 July 2024</td>
+            <td>Nice, France</td>
         </tr>
         <tr>
-            <td colspan="3">A thrilling global event with participation from over 200 countries.</td>
+            <td colspan="2">Closing Ceremony</td>
+            <td>11 August 2024</td>
+            <td>Pais, France</td>
         </tr>
     </table>
 
+    <h2>Survey Form</h2>
+
+
     <div class="form-section">
-        <h3>Survey Form</h3>
         <form onsubmit="return validateForm()">
-            <label for="name">Name<span class="required">*</span></label>
+            <label for="name">Name:<span class="required"></span></label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Email<span class="required">*</span></label>
+            <label for="email">Email:<span class="required"></span></label>
             <input type="email" id="email" name="email" required>
 
-            <label for="phone">Phone Number<span class="required">*</span></label>
+            <label for="phone">Phone Number:<span class="required"></span></label>
             <input type="tel" id="phone" name="phone" pattern="\d{10}" required>
 
-            <label>Gender<span class="required">*</span></label>
+            <label>Gender:<span class="required"></span></label>
             <input type="radio" id="male" name="gender" value="male" required> Male
             <input type="radio" id="female" name="gender" value="female" required> Female
-
-            <label for="event">Favorite Event</label>
+            <br><br>
+            <label for="event">Favorite Event:</label>
             <select id="event" name="event">
-                <option value="track">Track & Field</option>
-                <option value="swimming">Swimming</option>
-                <option value="gymnastics">Gymnastics</option>
-                <option value="basketball">Basketball</option>
+                <option value="None">Select an Event</option>
+                <option value="Athletics">Athletics</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Gymnastics">Gymnastics</option>
+                <option value="Football">Football</option>
             </select>
 
-            <label for="date">Preferred Date<span class="required">*</span></label>
-            <input type="text" id="date" name="date" placeholder="dd-mm-yyyy" required>
+            <label for="date">Preferred Date for Attending:<span class="required"></span></label>
+            <input type="date" id="date" name="date" placeholder="dd-mm-yyyy" required>
 
             <label>
-                <input type="checkbox" id="agree" required> I agree to the terms and conditions<span class="required">*</span>
+                <input type="checkbox" id="agree" required> I agree to the terms and conditions<span class="required"></span>
             </label>
+            <br>
 
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+            <input class = "submit" type="submit" value="Submit">
+            <br>
+            <br>
+            <input class = "reset" type="reset" value="Reset">
         </form>
     </div>
 
