@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympics Games 2024 Paris Survey</title>
     <style>
         body {
             background-color: rgb(199, 232, 255);
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 25px;
         }
 
         table {
             width: 100%;
             margin: 10px auto;
-            border-collapse: collapse;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            border-collapse:collapse;
+            background-color: white;
         }
 
         th, td {
             padding: 10px;
             text-align: left;
-            border: 1px solid #ccc;
+            border: 1px solid black;
         }
 
         th {
@@ -33,24 +30,20 @@
 
         label {
             display: block;
-            margin-bottom: 5px;
             font-weight: bold;
+            margin-bottom :4px;
         }
 
-        input[type="text"], input[type="email"], input[type="tel"], input[type="date"] ,select {
+        #name, #email, #phone, #date , select {
             width: 98%;
             padding-top: 10px;
             padding-bottom: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #d0cece;
             border-radius: 5px;
         }
 
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        .form-section {
+        .form {
             width: 20%;
             margin: 0 auto;
             padding: 20px;
@@ -59,7 +52,7 @@
             border-radius: 5px;
         }
 
-        .form-section input[type="submit"], .form-section input[type="reset"] {
+        .button {
             background-color: #1e90ff;
             color: white;
             padding: 10px 20px;
@@ -68,7 +61,7 @@
             cursor: pointer;
         }
 
-        .form-section input[type="submit"]:hover, .form-section input[type="reset"]:hover {
+        .form input[type="submit"]:hover, .form input[type="reset"]:hover {
             background-color: #0056b3;
         }
 
@@ -79,45 +72,33 @@
             width: 100px;
         }
 
-        .required {
-            color: red;
-        }
-
-        .submit{
-            width: 200px;
-        }
-
-        .reset{
+        .button{
             width: 200px;
         }
 
     </style>
     <script>
-        function validateForm() {
+        function validate_form() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const phone = document.getElementById("phone").value;
             const checkbox = document.getElementById("agree").checked;
 
             if (!name || !email || !phone) {
-                alert("Please fill out all required fields.");
                 return false;
             }
 
             const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
             if (!email.match(emailPattern)) {
-                alert("Please enter a valid email.");
                 return false;
             }
 
             const phonePattern = /^\d{10}$/;
             if (!phone.match(phonePattern)) {
-                alert("Please enter a valid 10-digit phone number.");
                 return false;
             }
 
             if (!checkbox) {
-                alert("Please agree to the terms before submitting.");
                 return false;
             }
 
@@ -129,11 +110,8 @@
 <body>
 
     <h1>Olympics Games 2024 Paris</h1>
-
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/2024_Summer_Olympics_logo.svg/800px-2024_Summer_Olympics_logo.svg.png" alt="Olympics Logo">
-
     <h2>Olympics Games 2024 Highlights</h2>
-
     <table>
         <tr>
             <th colspan="2">Event</th>
@@ -158,19 +136,19 @@
         </tr>
     </table>
 
+
     <h2>Survey Form</h2>
 
-
-    <div class="form-section">
-        <form onsubmit="return validateForm()">
+    <div class="form">
+        <form onsubmit="return validate_form()">
             <label for="name">Name:<span class="required"></span></label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" required>
 
             <label for="email">Email:<span class="required"></span></label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" required>
 
             <label for="phone">Phone Number:<span class="required"></span></label>
-            <input type="tel" id="phone" name="phone" pattern="\d{10}" required>
+            <input type = "tel" id="phone" pattern="\d{10}" required>
 
             <label>Gender:<span class="required"></span></label>
             <input type="radio" id="male" name="gender" value="male" required> Male
@@ -186,17 +164,17 @@
             </select>
 
             <label for="date">Preferred Date for Attending:<span class="required"></span></label>
-            <input type="date" id="date" name="date" placeholder="dd-mm-yyyy" required>
+            <input type="date" id="date" placeholder="dd-mm-yyyy" required>
 
             <label>
-                <input type="checkbox" id="agree" required> I agree to the terms and conditions<span class="required"></span>
+                <input type = "checkbox" id = "agree" required> I agree to the terms and conditions<span class="required"></span>
             </label>
             <br>
 
-            <input class = "submit" type="submit" value="Submit">
+            <input class = "button" type="submit" value="Submit">
             <br>
             <br>
-            <input class = "reset" type="reset" value="Reset">
+            <input class = "button" type="reset" value="Reset">
         </form>
     </div>
 
